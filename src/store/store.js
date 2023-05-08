@@ -1,7 +1,7 @@
 import { createStore } from "redux";
 
 const initialState = {
-    activeScreen: 'dashboard'
+    activeScreen: 'Dashboard'
 };
 
 const reducer = (state = initialState, action) => {
