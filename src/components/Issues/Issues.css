@@ -1,1 +1,21 @@
-/*# sourceMappingURL=Issues.css.map */
+.issue-container {
+  position: relative;
+  overflow: hidden;
+}
+.issue-container .btn-issue {
+  background-color: rgb(140, 140, 255);
+  color: #fff;
+  padding: 1rem;
+  width: 100%;
+  border: 0;
+  border-radius: 0.25rem;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+}
+.issue-container .btn-issue .btn-icon {
+  padding: 0.5rem;
+  background-color: #494F5F;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}/*# sourceMappingURL=Issues.css.map */
