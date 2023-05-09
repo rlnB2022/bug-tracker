@@ -2,6 +2,7 @@ import './MobileNavigation.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGripHorizontal, faList, faBell, faUser } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch, useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 
 const MobileNavigation = () => {
     /* get active screen */
@@ -22,14 +23,16 @@ const MobileNavigation = () => {
         dispatch({ type: 'activeScreen', activeScreen: activeScreen})
     };
 
-    /* Map over the navigation items created above to display the navigation items */
+    /* Map over the navigation items created above */
     return (
         <div className="mobile-navigation-container">
             {navItems.map(item => {
                 return (
-                    <div onClick={() => handleClick(item.text)} className={`mobile-nav-item ${item.active ? 'active-menu-item' : ''}`}>
-                        <FontAwesomeIcon icon={item.img} size="2x" />
-                        <h6>{item.text}</h6>
+                    <div className={`mobile-nav-item ${item.active ? 'active-menu-item' : ''}`}>
+                        <NavLink className={({isActive}) => isActive ? 'activeNavLink' : 'inactiveNavLink'} to={`/${item.text}`} onClick={() => handleClick(item.text)}>
+                            <FontAwesomeIcon icon={item.img} size="2x" />
+                            <h6>{item.text}</h6>
+                        </NavLink>
                     </div>
                 )
             })}
