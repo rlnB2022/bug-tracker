@@ -1,0 +1,13 @@
+.add-new-issue-container {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background-color: red;
+  z-index: 1;
+  transition: 0.4s ease-in-out;
+  width: 100%;
+}
+
+.add-new-issue-visible {
+  left: 0;
+}/*# sourceMappingURL=AddNewIssue.css.map */

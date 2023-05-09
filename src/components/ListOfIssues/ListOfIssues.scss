@@ -1,0 +1,102 @@
+.list-of-issues-container {
+    margin-top: .5rem;
+    flex: 1;
+    .issue-container {
+        display: flex;
+        margin: .5rem 0;
+        border: 2px solid #ffffff44;
+        border-radius: .25rem;
+
+        &.Critical {
+            border-color: red;
+        }
+
+        &.Major {
+            border-color: orange;
+        }
+
+        &.Minor {
+            border-color: yellow;
+        }
+
+        &.Trivial {
+            border-color: green;
+        }
+
+        .issue-priority {
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            color: #fff;
+            padding: .5rem .2rem;
+            font-weight: 700;
+
+            &.Critical {
+                background-color: red;
+            }
+
+            &.Major {
+                background-color: orange;
+            }
+
+            &.Minor {
+                background-color: yellow;
+                color: #000;
+            }
+
+            &.Trivial {
+                background-color: green;
+            }
+        }
+
+        .issue-details {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding: .5rem;
+
+            .issue-top {
+                display: flex;
+
+                .issue-user {
+                    .icon {
+                        font-size: 1.25em;
+                        border-radius: 50%;
+                        padding: .5rem;
+                        background-color: grey;
+
+                        &.assigned {
+                            background-color: green;
+                        }
+                    }
+
+                }
+
+                .issue-info {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    padding: .25rem;
+
+                    .info {
+                        display: flex;
+                        justify-content: space-between;
+                        padding-bottom: .25rem;
+
+                        .info-status {
+                            border: 1px solid #fff;
+                            padding: .2rem;
+                            width: 100px;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+
+            .issue-bottom {
+                .issue-description {
+                    padding: 0 .25rem;
+                }
+            }
+        }
+    }
+}

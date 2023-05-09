@@ -1,0 +1,80 @@
+.list-of-issues-container {
+  margin-top: 0.5rem;
+  flex: 1;
+}
+.list-of-issues-container .issue-container {
+  display: flex;
+  margin: 0.5rem 0;
+  border: 2px solid rgba(255, 255, 255, 0.2666666667);
+  border-radius: 0.25rem;
+}
+.list-of-issues-container .issue-container.Critical {
+  border-color: red;
+}
+.list-of-issues-container .issue-container.Major {
+  border-color: orange;
+}
+.list-of-issues-container .issue-container.Minor {
+  border-color: yellow;
+}
+.list-of-issues-container .issue-container.Trivial {
+  border-color: green;
+}
+.list-of-issues-container .issue-container .issue-priority {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  color: #fff;
+  padding: 0.5rem 0.2rem;
+  font-weight: 700;
+}
+.list-of-issues-container .issue-container .issue-priority.Critical {
+  background-color: red;
+}
+.list-of-issues-container .issue-container .issue-priority.Major {
+  background-color: orange;
+}
+.list-of-issues-container .issue-container .issue-priority.Minor {
+  background-color: yellow;
+  color: #000;
+}
+.list-of-issues-container .issue-container .issue-priority.Trivial {
+  background-color: green;
+}
+.list-of-issues-container .issue-container .issue-details {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0.5rem;
+}
+.list-of-issues-container .issue-container .issue-details .issue-top {
+  display: flex;
+}
+.list-of-issues-container .issue-container .issue-details .issue-top .issue-user .icon {
+  font-size: 1.25em;
+  border-radius: 50%;
+  padding: 0.5rem;
+  background-color: grey;
+}
+.list-of-issues-container .issue-container .issue-details .issue-top .issue-user .icon.assigned {
+  background-color: green;
+}
+.list-of-issues-container .issue-container .issue-details .issue-top .issue-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0.25rem;
+}
+.list-of-issues-container .issue-container .issue-details .issue-top .issue-info .info {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 0.25rem;
+}
+.list-of-issues-container .issue-container .issue-details .issue-top .issue-info .info .info-status {
+  border: 1px solid #fff;
+  padding: 0.2rem;
+  width: 100px;
+  text-align: center;
+}
+.list-of-issues-container .issue-container .issue-details .issue-bottom .issue-description {
+  padding: 0 0.25rem;
+}/*# sourceMappingURL=ListOfIssues.css.map */
