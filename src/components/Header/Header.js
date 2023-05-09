@@ -8,7 +8,7 @@ const Header = () => {
     return (
         <div className="header-container">
             <h1>{title}</h1>
-            <Menu />
+            {/* <Menu /> */}
         </div>
     )
 };

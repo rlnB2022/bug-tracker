@@ -1,6 +1,7 @@
 .list-of-issues-container {
     margin-top: .5rem;
     flex: 1;
+    margin-bottom: 100px;
     .issue-container {
         display: flex;
         margin: .5rem 0;
@@ -58,6 +59,7 @@
                 display: flex;
 
                 .issue-user {
+                    margin-top: .25rem;
                     .icon {
                         font-size: 1.25em;
                         border-radius: 50%;

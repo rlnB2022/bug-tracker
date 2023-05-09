@@ -1,9 +1,5 @@
 import './App.css';
 
-/* import Header and navigation components */
-import Header from './components/Header/Header';
-import MobileNavigation from './components/MobileNavigation/MobileNavigation';
-
 /* Import components */
 import Dashboard from './components/Dashboard/Dashboard';
 import Issues from './components/Issues/Issues';

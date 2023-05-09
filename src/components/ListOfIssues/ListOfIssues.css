@@ -1,6 +1,7 @@
 .list-of-issues-container {
   margin-top: 0.5rem;
   flex: 1;
+  margin-bottom: 100px;
 }
 .list-of-issues-container .issue-container {
   display: flex;
@@ -48,6 +49,9 @@
 }
 .list-of-issues-container .issue-container .issue-details .issue-top {
   display: flex;
+}
+.list-of-issues-container .issue-container .issue-details .issue-top .issue-user {
+  margin-top: 0.25rem;
 }
 .list-of-issues-container .issue-container .issue-details .issue-top .issue-user .icon {
   font-size: 1.25em;

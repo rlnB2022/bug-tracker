@@ -3,10 +3,10 @@ import DashboardItem from './Dashboard__Item';
 import { useSelector } from 'react-redux';
 
 const Dashboard = () => {
-    const newIssuesCount = useSelector(state => state.issues.filter(issue => issue.status === 'new')).length;
-    const completedCount = useSelector(state => state.issues.filter(issue => issue.status === 'completed')).length;
-    const unassignedCount = useSelector(state => state.issues.filter(issue => issue.status === 'unassigned')).length;
-    const inProgressCount = useSelector(state => state.issues.filter(issue => issue.status === 'inprogress')).length;
+    const newIssuesCount = useSelector(state => state.issues.filter(issue => issue.status === 'New')).length;
+    const completedCount = useSelector(state => state.issues.filter(issue => issue.status === 'Completed')).length;
+    const unassignedCount = useSelector(state => state.issues.filter(issue => issue.status === 'Unassigned')).length;
+    const inProgressCount = useSelector(state => state.issues.filter(issue => issue.status === 'In-Progress')).length;
 
     const newIssues = <DashboardItem title="New Issues" count={newIssuesCount} />;
     const completedIssues = <DashboardItem title="Completed Issues" count={completedCount} />;
