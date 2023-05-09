@@ -9,11 +9,14 @@
         border-radius: .25rem;
 
         .issue-priority {
-            writing-mode: vertical-rl;
-            transform: rotate(180deg);
             color: #fff;
-            padding: .5rem .2rem;
+            border-bottom-left-radius: .25rem;
+            border-bottom-right-radius: .25rem;
             font-weight: 700;
+            width: 25%;
+            text-align: center;
+            margin-top: -.5rem;
+            margin-left: -.5rem;
 
             &.Critical {
                 background-color: red;

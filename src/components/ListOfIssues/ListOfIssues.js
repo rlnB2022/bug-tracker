@@ -17,8 +17,8 @@ const ListOfIssues = () => {
             {listOfIssues.map(issue => {
                 return (
                     <div className="issue-container">
-                        <div className={`issue-priority ${issue.priority}`}>{issue.priority}</div>
                         <div className="issue-details">
+                            <div className={`issue-priority ${issue.priority}`}>{issue.priority}</div>
                             <div className="issue-top">
                                 <div className="issue-user">
                                     <FontAwesomeIcon icon={faUser} className={`icon ${issue.assignedTo !== '' ? 'assigned' : ''}`}/>
