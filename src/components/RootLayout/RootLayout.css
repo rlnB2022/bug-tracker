@@ -1,1 +1,4 @@
-/*# sourceMappingURL=RootLayout.css.map */
+.root-layout {
+  display: flex;
+  flex-direction: column;
+}/*# sourceMappingURL=RootLayout.css.map */

@@ -16,6 +16,15 @@
   border-radius: 0.5rem;
   padding: 0.5rem;
 }
+.mobile-navigation-container .mobile-nav-item .activeNavLink {
+  color: #fff;
+}
+.mobile-navigation-container .mobile-nav-item .inactiveNavLink {
+  color: #a9a9a9;
+}
+.mobile-navigation-container .mobile-nav-item a {
+  text-decoration: none;
+}
 .mobile-navigation-container .mobile-nav-item.active-menu-item {
   color: #fff;
   background-color: #494F5F;
