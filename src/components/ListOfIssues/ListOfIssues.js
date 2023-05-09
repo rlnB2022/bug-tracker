@@ -5,6 +5,8 @@ import { faBug, faStar, faTicket, faUser } from '@fortawesome/free-solid-svg-ico
 
 const ListOfIssues = () => {
     const listOfIssues = useSelector(state => state.issues);
+
+    /* This object is used to display the correct icon for the type of issue */
     const issueType = {
         'Bug': faBug,
         'Feature': faStar
@@ -24,7 +26,7 @@ const ListOfIssues = () => {
                                 <div className="issue-info">
                                     <div className="info">
                                         <div>
-                                            <FontAwesomeIcon icon={faTicket} />
+                                            <FontAwesomeIcon icon={faTicket} className="ticket" />
                                             {issue.id}
                                         </div>
                                         <div>
@@ -36,7 +38,7 @@ const ListOfIssues = () => {
                                             <FontAwesomeIcon icon={issueType[issue.type]} />
                                             {issue.type}
                                         </div>
-                                        <div className="info-status">
+                                        <div className={`info-status ${issue.status}`}>
                                             {issue.status}
                                         </div>
                                     </div>
