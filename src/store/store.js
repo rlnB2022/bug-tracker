@@ -34,6 +34,14 @@ const reducer = (state = initialState, action) => {
                 addNewIssueVisible: action.visible,
                 addNewIssueReset: action.reset
             }
+        case 'addNewIssue':
+            return {
+                ...state,
+                issues: [
+                    ...state.issues,
+                    action.issueObj
+                ]
+            }
         default:
             return state;
     }
