@@ -6,6 +6,7 @@ import Issues from './components/Issues/Issues';
 import Notifications from './components/Notifications/Notifications';
 import Account from './components/Account/Account';
 import RootLayout from './components/RootLayout/RootLayout';
+import AddNewIssue from './components/AddNewIssue/AddNewIssue';
 
 /* Redux store and router imports */
 import { Provider } from 'react-redux';
@@ -28,6 +29,7 @@ const App = () => {
     <Provider store={store}>
       <div className="App">
         <RouterProvider router={router} />
+        <AddNewIssue />
       </div>
     </Provider>
   );

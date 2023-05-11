@@ -14,4 +14,7 @@ html, body {
     flex-direction: column;
     padding: .5rem;
     color: #a9a9a9;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
 }

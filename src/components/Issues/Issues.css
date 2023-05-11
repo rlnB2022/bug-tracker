@@ -1,6 +1,8 @@
 .issue-container {
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 .issue-container .btn-issue {
   background-color: rgb(140, 140, 255);
