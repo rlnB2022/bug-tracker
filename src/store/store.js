@@ -3,16 +3,16 @@ import { createStore } from "redux";
 const initialState = {
     activeScreen: 'Dashboard',
     issues: [
-        { id: '123', name: 'Unable to login', date: 'May 7, 2023', description: 'I am unable to login. Please help.', assignedTo: 'Rick', priority: 'Critical', status: 'New', type: 'Feature' },
-        { id: '123', name: 'Unable to login', date: 'May 7, 2023', description: 'I am unable to login. Please help.', assignedTo: 'Rick', priority: 'Major', status: 'Completed', type: 'Bug' },
-        { id: '123', name: 'Unable to login', date: 'May 7, 2023', description: 'I am unable to login. Please help.', assignedTo: 'Rick', priority: 'Minor', status: 'Completed', type: 'Bug' },
-        { id: '123', name: 'Unable to login', date: 'May 7, 2023', description: 'I am unable to login. Please help.', assignedTo: '', priority: 'Critical', status: 'In-Progress', type: 'Bug' },
-        { id: '123', name: 'Unable to login', date: 'May 7, 2023', description: 'I am unable to login. Please help.', assignedTo: 'Rick', priority: 'Trivial', status: 'Unassigned', type: 'Bug' },
-        { id: '123', name: 'Unable to login', date: 'May 7, 2023', description: 'I am unable to login. Please help.', assignedTo: 'Rick', priority: 'Critical', status: 'In-Progress', type: 'Bug' },
-        { id: '123', name: 'Unable to login', date: 'May 7, 2023', description: 'I am unable to login. Please help.', assignedTo: 'Rick', priority: 'Trivial', status: 'In-Progress', type: 'Bug' },
+        { id: '4235', title: 'Unable to login', date: 'May 7, 2023', description: 'I am unable to login. Please help.', assignedTo: 'Rick', priority: 'Critical', status: 'New', type: 'Feature' },
+        { id: '4240', title: 'Unable to login', date: 'May 7, 2023', description: 'I am unable to login. Please help.', assignedTo: 'Rick', priority: 'Major', status: 'Completed', type: 'Bug' },
+        { id: '4399', title: 'Unable to login', date: 'May 7, 2023', description: 'I am unable to login. Please help.', assignedTo: 'Rick', priority: 'Minor', status: 'Completed', type: 'Bug' },
+        { id: '123', title: 'Unable to login', date: 'May 7, 2023', description: 'I am unable to login. Please help.', assignedTo: '', priority: 'Critical', status: 'In-Progress', type: 'Bug' },
+        { id: '4458', title: 'Unable to login', date: 'May 7, 2023', description: 'I am unable to login. Please help.', assignedTo: 'Rick', priority: 'Trivial', status: 'Unassigned', type: 'Bug' },
+        { id: '4685', title: 'Unable to login', date: 'May 7, 2023', description: 'I am unable to login. Please help.', assignedTo: 'Rick', priority: 'Critical', status: 'In-Progress', type: 'Bug' },
+        { id: '4893', title: 'Unable to login', date: 'May 7, 2023', description: 'I am unable to login. Please help.', assignedTo: 'Rick', priority: 'Trivial', status: 'In-Progress', type: 'Bug' },
     ],
     addNewIssueVisible: false,
-    addNewIssueReset: false,
+    addNewIssueReset: false
 };
 
 const reducer = (state = initialState, action) => {
