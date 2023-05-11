@@ -90,6 +90,9 @@ const AddNewIssue = () => {
 
         /* hide the modal */
         hideModal();
+
+        // @TODO: Add new issue to the firebase store and remove the dispatch calls to the store as we will just get
+        // all the new issues from the firebase db and put into the store
     };
 
     /* When the component mounts, add the class to animate in the component */

@@ -10,7 +10,8 @@ const Notifications = () => {
     /* Get list of notifications */
     const notifications = useSelector(state => state.notifications);
 
-    const handleClick = (id, message) => {
+    /* Mark the notification as read */
+    const handleClick = (id) => {
         dispatch({ type: 'markNotificationRead', id: id})
     };
 
@@ -21,7 +22,7 @@ const Notifications = () => {
                     <div className="notification-item-container">
                         <div className="notification-item">
                             <div className="button-read-container">
-                                <button className={`btnRead ${notification.read ? 'read' : ''}`} onClick={() => handleClick(notification.id, notification.message)}>
+                                <button className={`btnRead ${notification.read ? 'read' : ''}`} onClick={() => handleClick(notification.id)}>
                                     {notification.read ? <FontAwesomeIcon icon={faCheckCircle} /> : ''}
                                     <p className="mark-read">{!notification.read ? 'Mark ' : ''}Read</p>
                                 </button>
