@@ -13,10 +13,13 @@ const AddNewIssue = () => {
 
     const [submitReady, setSubmitReady] = useState(false);
 
-    /* setup useState hooks for inputs */
+    /* setup useState hooks */
     const [titleValue, setTitleValue] = useState('');
     const [dateValue, setDateValue] = useState(''); // stored as a string, not a Date
     const [descriptionValue, setDescriptionValue] = useState('');
+    const [typeValue, setTypeValue] = useState();
+    const [priorityValue, setPriorityValue] = useState();
+    const [userValue, setUserValue] = useState();
 
     /* Get issues and users values from the store */
     const issueList = useSelector(state => state.issues);
@@ -33,6 +36,18 @@ const AddNewIssue = () => {
     
     const handleDescriptionChange = event => {
         setDescriptionValue(event.target.value);
+    };
+
+    const handleTypeChange = event => {
+        setTypeValue(event.target.value);
+    };
+
+    const handlePriorityChange = event => {
+        setPriorityValue(event.target.value);
+    };
+
+    const handleUserChange = event => {
+        setUserValue(event.target.value);
     };
 
     const hideModal = () => {
@@ -55,6 +70,19 @@ const AddNewIssue = () => {
         /* Get a new id using the highest id found in the array + 1 */
         let newId = Math.max(...issueList.map(obj => obj.id)) + 1
 
+        const issueObj = {
+            id: newId,
+            title: titleValue,
+            date: dateValue,
+            description: descriptionValue,
+            assignedTo: userValue,
+            priority: priorityValue,
+            status: 'New',
+            type: typeValue
+        };
+
+        dispatch({type: 'addNewIssue', issueObj});
+
         hideModal();
     };
 
@@ -63,7 +91,19 @@ const AddNewIssue = () => {
         setVisible(true);
     }, []);
 
+    useEffect(() => {
+        validateInfo();
+    }, [titleValue, dateValue, descriptionValue, typeValue, priorityValue, userValue]);
+
     /* Verify that each of the inputs and selects have been filled in, enable the submit button */
+    const validateInfo = () => {
+        if(!titleValue || !dateValue || !descriptionValue || !typeValue || !priorityValue || !userValue) {
+            setSubmitReady(false);
+            return;
+        }
+
+        setSubmitReady(true);
+    };
 
     return (
         <div className={`add-new-issue-container ${visible ? 'add-new-issue-visible' : ''}`}>
@@ -73,14 +113,14 @@ const AddNewIssue = () => {
                 <label htmlFor="newIssueDate">Date</label>
                 <input placeholder="Enter a date in text format" id="newIssueDate" type="text" value={dateValue} onChange={handleDateChange} />
                 <label htmlFor="newIssueType">Type</label>
-                <select id="newIssueType" name="issueType">
+                <select id="newIssueType" name="issueType" onChange={handleTypeChange}>
                     <option value="" selected disabled hidden>Choose a Type</option>
                     <option value="bug">Bug</option>
                     <option value="feature">Feature</option>
                     <option value="backlog">Backlog</option>
                 </select>
                 <label htmlFor="newIssuePriority">Priority</label>
-                <select id="newIssuePriority" name="priority">
+                <select id="newIssuePriority" name="priority" onChange={handlePriorityChange}>
                     <option value="" selected disabled hidden>Choose a Priority</option>
                     <option value="critical">Critical</option>
                     <option value="minor">Minor</option>
@@ -88,7 +128,7 @@ const AddNewIssue = () => {
                     <option value="trivial">Trivial</option>
                 </select>
                 <label htmlFor="newIssueAssignedTo">Assigned To</label>
-                <select id="newIssueAssignedTo" name="assignedTo">
+                <select id="newIssueAssignedTo" name="assignedTo" onChange={handleUserChange}>
                     <option value="" selected disabled hidden>Choose a User</option>
                     {users.map(user => {
                         return (
