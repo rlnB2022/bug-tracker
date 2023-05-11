@@ -1,11 +1,42 @@
 .notifications-container {
-  padding: 1rem;
+  padding: 0.5rem;
 }
-.notifications-container .notification-item {
+.notifications-container .notification-item-container {
+  display: flex;
+  align-items: center;
+}
+.notifications-container .notification-item-container .notification-item {
   background-color: #ccc;
-  padding: 1rem;
+  padding: 0.25rem 0.25rem 1rem 1rem;
   margin-bottom: 0.5rem;
   border-radius: 0.5rem;
   color: #000;
   font-weight: 700;
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.notifications-container .notification-item-container .notification-item .button-read-container {
+  display: flex;
+  flex-direction: column;
+}
+.notifications-container .notification-item-container .notification-item .button-read-container .btnRead {
+  background-color: #aaa;
+  margin-left: 0.5rem;
+  border: 0;
+  padding: 0.5rem;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  max-height: 50px;
+  display: flex;
+  transition: 0.4s ease-in-out;
+  align-self: flex-end;
+}
+.notifications-container .notification-item-container .notification-item .button-read-container .btnRead.read {
+  background-color: green;
+}
+.notifications-container .notification-item-container .notification-item .button-read-container .mark-read {
+  padding-left: 5px;
 }/*# sourceMappingURL=Notifications.css.map */
