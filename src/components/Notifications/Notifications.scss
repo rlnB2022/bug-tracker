@@ -1,11 +1,48 @@
 .notifications-container {
-    padding: 1rem;
-    .notification-item {
-        background-color: #ccc;
-        padding: 1rem;
-        margin-bottom: .5rem;
-        border-radius: .5rem;
-        color: #000;
-        font-weight: 700;
+    padding: .5rem;
+    .notification-item-container {
+        display: flex;
+        align-items: center;
+        .notification-item {
+            background-color: #ccc;
+            padding: .25rem .25rem 1rem 1rem;
+            margin-bottom: .5rem;
+            border-radius: .5rem;
+            color: #000;
+            font-weight: 700;
+            flex: 1;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+
+            .button-read-container {
+                display: flex;
+                flex-direction: column;
+
+                .btnRead {
+                    background-color: #aaa;
+                    margin-left: .5rem;
+                    border: 0;
+                    padding: .5rem;
+                    color: #fff;
+                    font-weight: 700;
+                    border-radius: .5rem;
+                    max-height: 50px;
+                    display: flex;
+                    transition: .4s ease-in-out;
+                    align-self: flex-end;
+    
+                    &.read {
+                        background-color: green;
+                    }
+                }
+
+                .mark-read {
+                    padding-left: 5px;
+                }
+            }
+
+        }
     }
+
 }

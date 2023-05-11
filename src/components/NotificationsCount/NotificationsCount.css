@@ -2,7 +2,6 @@
   position: absolute;
   top: 2px;
   right: 20px;
-  background-color: red;
   width: 25px;
   height: 25px;
   border-radius: 50%;
@@ -11,4 +10,7 @@
   align-items: center;
   font-weight: 700;
   font-size: 1.15rem;
+}
+.count-container.visible {
+  background-color: red;
 }/*# sourceMappingURL=NotificationsCount.css.map */

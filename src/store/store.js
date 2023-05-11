@@ -14,9 +14,9 @@ const initialState = {
     addNewIssueVisible: false,
     addNewIssueReset: false,
     notifications: [
-        { message: '1st notification' },
-        { message: '2nd notification' },
-        { message: '3rd notification' },
+        { id: 0, message: '1st notification that is really long and should adjust the size of the surrounding div', read: false },
+        { id: 1, message: '2nd notification', read: false },
+        { id: 2, message: '3rd notification', read: false },
     ],
     users: [
         { userId: 1, name: 'Rick' },
@@ -52,7 +52,22 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 notifications: [
                     ...state.notifications,
-                    { message: action.message }
+                    { id: state.notifications.length + 1, message: action.message, read: false }
+                ]
+            }
+        case 'markNotificationRead':
+            const index = state.notifications.findIndex(notification => notification.id === action.id);
+
+            return {
+                ...state,
+                notifications: [
+                    /* get everything before selected index */
+                    ...state.notifications.slice(0, index),
+                    {
+                        ...state.notifications[index], read: true
+                    },
+                    /* get everything after selected index */
+                    ...state.notifications.slice(index + 1)
                 ]
             }
         default:
