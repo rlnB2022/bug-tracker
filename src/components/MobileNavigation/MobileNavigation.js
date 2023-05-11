@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGripHorizontal, faList, faBell, faUser } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import NotificationsCount from '../NotificationsCount/NotificationsCount';
 
 const MobileNavigation = () => {
     /* get active screen */
@@ -30,6 +31,7 @@ const MobileNavigation = () => {
                 return (
                     <div className={`mobile-nav-item ${item.active ? 'active-menu-item' : ''}`}>
                         <NavLink className={({isActive}) => isActive ? 'activeNavLink' : 'inactiveNavLink'} to={`/${item.text}`} onClick={() => handleClick(item.text)}>
+                            {item.text === 'Notifications' ? <NotificationsCount /> : null}
                             <FontAwesomeIcon icon={item.img} size="2x" />
                             <h6>{item.text}</h6>
                         </NavLink>

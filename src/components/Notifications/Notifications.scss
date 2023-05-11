@@ -1,0 +1,11 @@
+.notifications-container {
+    padding: 1rem;
+    .notification-item {
+        background-color: #ccc;
+        padding: 1rem;
+        margin-bottom: .5rem;
+        border-radius: .5rem;
+        color: #000;
+        font-weight: 700;
+    }
+}
