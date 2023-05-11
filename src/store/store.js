@@ -13,6 +13,11 @@ const initialState = {
     ],
     addNewIssueVisible: false,
     addNewIssueReset: false,
+    notifications: [
+        { message: '1st notification' },
+        { message: '2nd notification' },
+        { message: '3rd notification' },
+    ],
     users: [
         { userId: 1, name: 'Rick' },
         { userId: 2, name: 'Brian' },
@@ -40,6 +45,14 @@ const reducer = (state = initialState, action) => {
                 issues: [
                     ...state.issues,
                     action.issueObj
+                ]
+            }
+        case 'addNotification':
+            return {
+                ...state,
+                notifications: [
+                    ...state.notifications,
+                    { message: action.message }
                 ]
             }
         default:

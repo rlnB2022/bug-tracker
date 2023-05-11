@@ -70,6 +70,7 @@ const AddNewIssue = () => {
         /* Get a new id using the highest id found in the array + 1 */
         let newId = Math.max(...issueList.map(obj => obj.id)) + 1
 
+        /* create the new object to save to the store */
         const issueObj = {
             id: newId,
             title: titleValue,
@@ -81,8 +82,13 @@ const AddNewIssue = () => {
             type: typeValue
         };
 
+        /* Save to the store */
         dispatch({type: 'addNewIssue', issueObj});
 
+        /* Add a notification */
+        dispatch({type: 'addNotification', message: 'New issue created!' });
+
+        /* hide the modal */
         hideModal();
     };
 

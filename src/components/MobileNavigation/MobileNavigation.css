@@ -15,6 +15,7 @@
   align-items: center;
   border-radius: 0.5rem;
   padding: 0.5rem;
+  position: relative;
 }
 .mobile-navigation-container .mobile-nav-item .activeNavLink {
   color: #fff;
