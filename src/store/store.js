@@ -12,7 +12,13 @@ const initialState = {
         { id: '4893', title: 'Unable to login', date: 'May 7, 2023', description: 'I am unable to login. Please help.', assignedTo: 'Rick', priority: 'Trivial', status: 'In-Progress', type: 'Bug' },
     ],
     addNewIssueVisible: false,
-    addNewIssueReset: false
+    addNewIssueReset: false,
+    users: [
+        { userId: 1, name: 'Rick' },
+        { userId: 2, name: 'Brian' },
+        { userId: 3, name: 'Lisa' },
+        { userId: 4, name: 'Jennifer' }
+    ]
 };
 
 const reducer = (state = initialState, action) => {
@@ -22,7 +28,7 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 activeScreen: action.activeScreen
             }
-        case 'addNewIssue':
+        case 'showAddNewIssueModal':
             return {
                 ...state,
                 addNewIssueVisible: action.visible,

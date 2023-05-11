@@ -10,7 +10,7 @@ const Issues = () => {
     const dispatch = useDispatch();
 
     const handleClick = () => {
-        dispatch({ type: 'addNewIssue', visible: true, reset: true });
+        dispatch({ type: 'showAddNewIssueModal', visible: true, reset: true });
     };
 
     return (
